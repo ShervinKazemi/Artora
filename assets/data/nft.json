@@ -1,0 +1,49 @@
+{
+    "NFT": [
+        {
+            "id": "1",
+            "name": "Music",
+            "imageUrl": "cover1.jpg"
+        },
+        {
+            "id": "2",
+            "name": "Art",
+            "imageUrl": "cover2.jpg"
+        },
+        {
+            "id": "3",
+            "name": "Digital",
+            "imageUrl": "cover3.jpg"
+        },
+        {
+            "id": "4",
+            "name": "Portrait Art",
+            "imageUrl": "trend2.png"
+        },
+        {
+            "id": "5",
+            "name": "Abstract Art",
+            "imageUrl": "trend.png"
+        },
+        {
+            "id": "6",
+            "name": "Digital Art",
+            "imageUrl": "trend3.png"
+        },
+        {
+            "id": "7",
+            "name": "Digital Art",
+            "imageUrl": "seller1.png"
+        },
+        {
+            "id": "8",
+            "name": "Digital Art",
+            "imageUrl": "seller2.png"
+        },
+        {
+            "id": "9",
+            "name": "Digital Art",
+            "imageUrl": "seller3.png"
+        }
+    ]
+}

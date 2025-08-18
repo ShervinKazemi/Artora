@@ -1,0 +1,45 @@
+{
+  "Stats" : [
+  {
+    "id": 1,
+    "imageUrl": "nft_1.jpg",
+    "name": "Monkey",
+    "price": 200055.02,
+    "chance": 5.99
+  },
+  {
+    "id": 2,
+    "imageUrl": "nft_2.jpg",
+    "name": "Cat SOL",
+    "price": 180055.45,
+    "chance": 33.79
+  },
+  {
+    "id": 3,
+    "imageUrl": "nft_3.jpg",
+    "name": "Hitlolo",
+    "price": 90055.62,
+    "chance": -6.87
+  },
+    {
+    "id": 4,
+    "imageUrl": "nft_4.jpg",
+    "name": "BatMin",
+    "price": 88055.12,
+    "chance": 3.99
+  },
+    {
+    "id": 5,
+    "imageUrl": "nft_5.jpg",
+    "name": "Tom",
+    "price": 10055.06,
+    "chance": -2.87
+  },
+    {
+    "id": 6,
+    "imageUrl": "nft_6.jpg",
+    "name": "Cooll",
+    "price": 9095.27,
+    "chance": -20.87
+  }
+]}
