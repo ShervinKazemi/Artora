@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'dart:ui';
+import 'package:artora/presentation/home/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class _MainBottomNavState extends State<MainBottomNav> {
   int _selectedIndex = 0;
 
   final List<Widget> _widgets = <Widget>[
-    Center(child: Text("Home Screen")),
+    const HomePage(),
     Center(child: Text("Stats Screen")),
     Center(child: Text("Search Screen")),
     Center(child: Text("Profile Screen")),
