@@ -1,3 +1,5 @@
+import 'package:artora/core/theme.dart';
+import 'package:artora/routes/app_route.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -5,6 +7,12 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      title: "Artora",
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.lightTheme,
+      routes: AppRoute.routes,
+      initialRoute: AppRoute.welcome,
+    );
   }
 }
