@@ -29,3 +29,4 @@ flutter:
     - assets/icon/
     - assets/image/
     - assets/data/nft.json
+    - assets/data/stats.json
