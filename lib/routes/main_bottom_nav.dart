@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:math';
 import 'dart:ui';
 import 'package:artora/presentation/home/home_page.dart';
@@ -35,56 +37,76 @@ class _MainBottomNavState extends State<MainBottomNav> {
       right: false,
       left: false,
       child: Scaffold(
+        backgroundColor: Colors.transparent,
+        extendBody: true,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: ClipPath(
           clipper: HexagonClipper(),
           child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 10 , sigmaY: 10),
+            filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
             child: Container(
-              width: 68,
-              height: 68,
+              width: 70,
+              height: 70,
               decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.3),
-                border: Border.all(
-                  color: Colors.white.withValues(alpha: 0.2),
-                  width: 1,
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Colors.white.withOpacity(0.3),
+                    Theme.of(context).colorScheme.primary.withOpacity(0.4),
+                  ],
                 ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    blurRadius: 15,
+                    spreadRadius: -5,
+                  ),
+                ],
               ),
               child: Icon(
                 CupertinoIcons.add,
-                color: Colors.white.withValues(alpha: 0.7),
-                size: 30,
+                color: Colors.white.withOpacity(0.9),
+                size: 32,
               ),
             ),
           ),
         ),
         body: _widgets[_selectedIndex],
         bottomNavigationBar: ClipRRect(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(48),
-            topRight: Radius.circular(48),
-          ),
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(32) , topRight: Radius.circular(32)),
           child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+            filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
             child: Container(
               height: 82,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(48),
-                  topRight: Radius.circular(48),
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(32) , topRight: Radius.circular(32)),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Colors.white.withOpacity(0.1),
+                    Colors.white.withOpacity(0.05),
+                  ],
                 ),
-                color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
                 border: Border.all(
-                  width: 2,
-                  color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
-                )
+                  width: 1.5,
+                  color: Colors.white.withOpacity(0.2),
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    blurRadius: 15,
+                    spreadRadius: -5,
+                  ),
+                ],
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   _buildNavItem("assets/image/home.png", 0),
                   _buildNavItem("assets/image/symbol.png", 1),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   _buildNavItem("assets/image/explore.png", 2),
                   _buildNavItem("assets/image/profile.png", 3),
                 ],
@@ -98,18 +120,23 @@ class _MainBottomNavState extends State<MainBottomNav> {
 
   Widget _buildNavItem(String assets, int index) {
     bool isSelected = _selectedIndex == index;
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         _onTap(index);
       },
       child: AnimatedContainer(
-        duration: Duration(milliseconds: 500),
+        duration: const Duration(milliseconds: 500),
+        padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          color: isSelected ? Colors.white.withOpacity(0.1) : Colors.transparent,
+        ),
         child: Image.asset(
-          width: 40,
-          height: 40,
           assets,
-          color: isSelected ? Colors.white : Colors.grey,
-        )
+          width: 32,
+          height: 32,
+          color: isSelected ? Colors.white : Colors.white.withOpacity(0.5),
+        ),
       ),
     );
   }
@@ -118,7 +145,7 @@ class _MainBottomNavState extends State<MainBottomNav> {
 class HexagonClipper extends CustomClipper<Path> {
   final double radius;
   
-  const HexagonClipper({this.radius = 4.0});
+  const HexagonClipper({this.radius = 8.0});
 
   @override
   Path getClip(Size size) {
