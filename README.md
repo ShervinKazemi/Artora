@@ -18,8 +18,6 @@ Welcome to **Artora**, a modern NFT marketplace built with Flutter. Artora provi
 
 ## 📱 Screenshots
 
-        Screen
-|----------------------|
 | ![Screen Shot](app.jpg)
 
 ---
