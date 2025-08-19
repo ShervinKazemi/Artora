@@ -3,6 +3,8 @@
 import 'dart:math';
 import 'dart:ui';
 import 'package:artora/presentation/home/home_page.dart';
+import 'package:artora/presentation/profile/profile_page.dart';
+import 'package:artora/presentation/search/search_page.dart';
 import 'package:artora/presentation/stats/stats_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,8 +22,8 @@ class _MainBottomNavState extends State<MainBottomNav> {
   final List<Widget> _widgets = <Widget>[
     const HomePage(),
     const StatsPage(),
-    Center(child: Text("Search Screen")),
-    Center(child: Text("Profile Screen")),
+    const SearchPage(),
+    const ProfilePage()
   ];
 
   void _onTap(int index) {
