@@ -72,10 +72,10 @@ class _MainBottomNavState extends State<MainBottomNav> {
                   topLeft: Radius.circular(48),
                   topRight: Radius.circular(48),
                 ),
-                color: Colors.white10.withValues(alpha: 0.2),
+                color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
                 border: Border.all(
                   width: 2,
-                  color: Colors.white10.withValues(alpha: 0.1)
+                  color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
                 )
               ),
               child: Row(
