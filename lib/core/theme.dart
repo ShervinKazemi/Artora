@@ -1,10 +1,7 @@
+import 'package:artora/core/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Appcolors {
-  static const Color primary = Color(0xFF211134);
-  static const Color lightText = Colors.white;
-}
 
 class AppTheme {
   static ThemeData get lightTheme {
