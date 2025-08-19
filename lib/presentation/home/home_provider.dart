@@ -32,6 +32,18 @@ class HomeProvider with ChangeNotifier {
     ).toList();
   }
 
+  List<String> getStoryImage() {
+    return getStoryData().map(
+      (nft) => "${AppConstants.baseUrl}${nft.imageUrl}",
+    ).toList();
+  }
+
+  List<String> getStoryTitle() {
+    return getStoryData().map(
+      (nft) => nft.name 
+    ).toList();
+  }
+
   List<Nft> getTrendingData() {
     return _nft.where(
       (nft) => homePageData.trendingData.contains(nft.id),
@@ -40,7 +52,7 @@ class HomeProvider with ChangeNotifier {
 
   List<Nft> getTopData() {
     return _nft.where(
-      (nft) => homePageData.trendingData.contains(nft.id),
+      (nft) => homePageData.topData.contains(nft.id),
     ).toList();
   }
 

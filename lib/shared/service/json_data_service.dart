@@ -9,6 +9,6 @@ class JsonDataService {
     final String response = await rootBundle.loadString(AppConstants.nftJson);
     final Map<String, dynamic> jsonData = json.decode(response);
     final List<dynamic> nftList = jsonData["NFT"];
-    return nftList.map((nft) => Nft.fromJson(nft as Map<String, String>)).toList();
+    return nftList.map((nft) => Nft.fromJson(nft as Map<String, dynamic>)).toList();
   }
 }
